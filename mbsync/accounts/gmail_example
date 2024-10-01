@@ -1,7 +1,7 @@
-IMAPAccount _name_
+IMAPAccount {{ALIAS}}
 Host imap.gmail.com
-User _addr_@gmail.com
-PassCmd "pass show _pass_name_"
+User {{ACCOUNT}}@gmail.com
+PassCmd "pass show {{PASS}}"
 
 SSLType IMAPS
 
@@ -9,20 +9,20 @@ CertificateFile /etc/ssl/certs/ca-certificates.crt
 #CertificateFile ~/.cert/imap.gmail.com.pem
 #CertificateFile ~/.cert/Equifax_Secure_CA.pem
 
-IMAPStore _name_-remote
-Account _name_
+IMAPStore {{ALIAS}}-remote
+Account {{ALIAS}}
 
-MaildirStore _name_-local
+MaildirStore {{ALIAS}}-local
 SubFolders Verbatim
 
 # The trailing "/" is important
 
-Path ~/.mail/_name_/
-Inbox ~/.mail/_name_/INBOX
+Path ~/.mail/{{ALIAS}}/
+Inbox ~/.mail/{{ALIAS}}/INBOX
 
-Channel _name_
-Far :_name_-remote:
-Near :_name_-local:
+Channel {{ALIAS}}
+Far :{{ALIAS}}-remote:
+Near :{{ALIAS}}-local:
 Patterns *
 SyncState *
 Create Both

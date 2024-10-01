@@ -3,7 +3,7 @@ Description=Run mbsync to refresh mails every minute
 
 [Timer]
 OnStartupSec=15s
-OnUnitActiveSec=3m
+OnUnitActiveSec=1m
 
 [Install]
 WantedBy=timers.target

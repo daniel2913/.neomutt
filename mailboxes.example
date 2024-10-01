@@ -3,7 +3,7 @@
 source mailbox.example
 
 folder-hook 'mailbox.example' 'source mailbox.example'
-folder-hook 'mailbox2' 'source mailbox.example2'
+folder-hook 'mailbox.example2' 'source mailbox.example2'
 
 # Macros for switching accounts
 #macro index 1 '<sync-mailbox><enter-command>source mailbox.example<enter><change-folder>!<enter>'

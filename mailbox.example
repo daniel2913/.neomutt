@@ -3,14 +3,14 @@ unmailboxes *
 set folder = "~/.mail/name/[Gmail]/"
 set spoolfile="+../INBOX"
 
-set smtp_url = smtp://_address_@smtp.gmail.com:587
-set smtp_pass = `pass show _pass_name_`
+set smtp_url = smtp://{{ACCOUNT}}@smtp.gmail.com:587
+set smtp_pass = `pass show {{PASS}}`
 
 set record="+Sent Mail"
 set postponed="+Drafts"
 
 mailboxes =../INBOX =All\ Mail =Sent\ Mail =Drafts =Spam =Trash
 
-set realname = "Name"
-set from = "_address_@gmail.com"
-set pgp_sign_as = "0x________________"
+set realname = "{{NAME}}"
+set from = "{{ACCOUNT}}@gmail.com"
+set pgp_sign_as = "0x{{SIGN}}"
