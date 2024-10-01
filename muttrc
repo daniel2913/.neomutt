@@ -1,0 +1,35 @@
+# vim: set filetype=muttrc:
+bind attach,index,pager \CD next-page
+bind attach,index,pager \CU previous-page
+bind pager g top
+bind pager G bottom
+bind attach,index g first-entry
+bind attach,index G last-entry
+
+bind index,pager \CP sidebar-prev                 # Ctrl-n to select next folder
+bind index,pager \CN sidebar-next                 # Ctrl-p to select previous folder
+bind index,pager \CO sidebar-open                 # Ctrl-o to open selected folder
+bind index,pager \CB sidebar-toggle-visible       # Ctrl-b to toggle visibility of the sidebar
+
+set sidebar_visible
+set sidebar_format="%B%?F? [%F]?%* %?N?%N/?%S"
+set sidebar_width   = 20
+set mail_check_stats
+set editor = "nvim"
+
+auto_view text/html
+set sort=reverse-date   
+set sort_aux=last-date-received
+set index_format="%4C %Z %{%b %d %R} %-15.15L (%?l?%4l&%4c?) %s"
+set sleep_time=0 
+set beep=no 
+set ssl_force_tls=yes
+
+set crypt_auto_pgp=yes
+set crypt_auto_sign=yes
+
+macro index,pager \cb ": unset wait_key; set pipe_decode\n|w3m\n: set wait_key; unset pipe_decode\n"
+
+source colors
+source contacts
+source mailboxlist
