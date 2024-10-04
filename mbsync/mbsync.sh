@@ -2,7 +2,7 @@
 
 killall mbsync &>/dev/null
 
-for i in $(find $HOME/.config/mbsync/accounts -type f -not -name 'example'); do
+for i in $(find $HOME/.config/neomutt/mbsync/accounts -type f -not -name '*_example'); do
 	mbsync -c $i -a &
 done
 wait
